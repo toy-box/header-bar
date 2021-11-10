@@ -1,10 +1,10 @@
 {
-  "name": "@toy-box/form-formula",
-  "version": "1.0.25",
-  "author": "DivXPro",
+  "name": "header-bar",
+  "version": "1.0.0",
+  "author": "shopnb",
   "license": "MIT",
-  "homepage": "https://toy-box.github.io/form-formula",
-  "repository": "https://github.com/toy-box/form-formula",
+  "homepage": "https://toy-box.github.io/header-bar",
+  "repository": "https://github.com/header-bar",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -24,14 +24,21 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
+    "*.{ts,tsx,js}": [
+      "eslint --ext .ts,.tsx,.js --fix",
+      "pretty-quick --staged",
+      "git add"
     ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
+    "*.md": [
+      "pretty-quick --staged",
+      "git add"
     ]
   },
   "dependencies": {
+    "@airclass/icons": "^4.3.4",
+    "@ant-design/icons": "^4.7.0",
+    "@designable/core": "^1.0.0-beta.32",
+    "@designable/shared": "^1.0.0-beta.32",
     "@formily/antd": "^2.0.0-beta.50",
     "@formily/core": "^2.0.0-beta.50",
     "@formily/json-schema": "^2.0.0-beta.50",
@@ -39,9 +46,17 @@
     "@formulajs/formulajs": "^2.6.9",
     "@toy-box/formula": "^1.0.4",
     "@toy-box/meta-schema": "^1.0.28",
-    "antd": "^4.15.5",
+    "@toy-box/toybox-shared": "^2.0.3",
+    "@types/react": "^16.14.20",
+    "@types/react-dom": "^16.9.14",
+    "ahooks": "^2.10.12",
+    "antd": "^4.16.13",
     "classnames": "^2.3.1",
     "codemirror": "^5.61.0",
+    "rc-motion": "^2.4.4",
+    "rc-picker": "^2.5.19",
+    "rc-table": "^7.19.0",
+    "rc-util": "^5.14.0",
     "react": "^16.12.0",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^16.12.0"
@@ -51,12 +66,12 @@
     "@formily/core": "^2.0.0-beta.50",
     "@formily/json-schema": "^2.0.0-beta.50",
     "@formily/react": "^2.0.0-beta.50",
-    "antd": "^4.15.5",
-    "classnames": "^2.3.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@designable/core": "^1.0.0-beta.32",
+    "@toy-box/toybox-ui": "^2.0.12",
     "@types/codemirror": "^5.60.0",
     "@umijs/test": "^3.0.5",
     "dumi": "^1.0.14",
@@ -64,6 +79,7 @@
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1",
+    "typescript": "^4.1.5",
     "yorkie": "^2.0.0"
   }
 }
