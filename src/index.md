@@ -21,7 +21,7 @@ import {
   TopbarPanel,
   CompositePanelContent,
   StudioPanel,
-} from 'header-bar';
+} from 'hrm-header-bar';
 
 const style = {
   border: '1px solid gray',
