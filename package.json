@@ -24,14 +24,11 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{ts,tsx,js}": [
-      "eslint --ext .ts,.tsx,.js --fix",
-      "pretty-quick --staged",
-      "git add"
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
     ],
-    "*.md": [
-      "pretty-quick --staged",
-      "git add"
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
     ]
   },
   "dependencies": {
