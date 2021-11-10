@@ -6,4 +6,3 @@ export {
   CompositePanelContent,
   StudioPanel,
 } from './panels';
-export { schemaPatch } from './schemaPatch';
