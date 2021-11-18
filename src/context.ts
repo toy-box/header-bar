@@ -12,7 +12,7 @@ export const DesignerLayoutContext = createContext<IDesignerLayoutContext>(
   null as any,
 );
 
-// export const DesignerEngineContext = createContext<Engine>(null)
+export const DesignerEngineContext = createContext<Engine>(null as any);
 
 // export const TreeNodeContext = createContext<TreeNode>(null)
 

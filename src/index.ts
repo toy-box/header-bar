@@ -6,3 +6,5 @@ export {
   CompositePanelContent,
   StudioPanel,
 } from './panels';
+export { Designer } from './containers';
+export { ActionsWidget } from './widgets';

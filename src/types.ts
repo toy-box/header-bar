@@ -10,6 +10,10 @@ export interface IDesignerLayoutContext {
   prefixCls: string | undefined;
 }
 
+export interface IDesignerProps extends IDesignerLayoutProps {
+  engine: Engine;
+}
+
 export interface IWorkspaceContext {
   id: string;
   title?: string;

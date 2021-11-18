@@ -25,7 +25,6 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
   Provider?: React.FC<IconProviderProps>;
 } = observer((props: React.PropsWithChildren<IIconWidgetProps>) => {
   const theme = useTheme();
-  debugger;
   const context = useContext(IconContext);
   const registry = useRegistry();
   const prefix = usePrefix('icon');

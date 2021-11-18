@@ -17,7 +17,6 @@ const StudioPanelInternal: React.FC<IStudioPanelProps> = ({
   ...props
 }) => {
   const prefix = usePrefix('main-panel');
-  console.log(props);
   if (logo || actions) {
     return (
       <div

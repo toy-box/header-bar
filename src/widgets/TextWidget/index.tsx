@@ -29,6 +29,7 @@ export const TextWidget: React.FC<ITextWidgetProps> = observer((props: any) => {
     const message = isStr(token)
       ? GlobalRegistry.getDesignerMessage(token)
       : token;
+    console.log(message, props);
     if (message) return takeLocale(message);
     return token;
   };

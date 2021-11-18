@@ -1,10 +1,10 @@
 {
-  "name": "hrm-header-bar",
+  "name": "header-bar",
   "version": "1.0.0",
   "author": "shopnb",
   "license": "MIT",
-  "homepage": "hrm-header-bar",
-  "repository": "https://github.com/shopnb1/header-bar",
+  "homepage": "header-bar",
+  "repository": "https://github.com/toy-box/herder-bar.git",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -40,6 +40,8 @@
     "@formily/core": "^2.0.0-beta.50",
     "@formily/json-schema": "^2.0.0-beta.50",
     "@formily/react": "^2.0.0-beta.50",
+    "@formily/reactive": "^2.0.0-rc.20",
+    "@formily/reactive-react": "^2.0.0-rc.20",
     "@toy-box/meta-schema": "^2.0.15",
     "@toy-box/toybox-shared": "^2.0.15",
     "@toy-box/toybox-ui": "^2.0.15",
