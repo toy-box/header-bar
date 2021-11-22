@@ -1,10 +1,9 @@
 import './locales';
 import './theme.less';
-export {
-  CompositePanel,
-  TopbarPanel,
-  CompositePanelContent,
-  StudioPanel,
-} from './panels';
-export { Designer } from './containers';
-export { ActionsWidget } from './widgets';
+export * from './panels';
+export * from './containers';
+export * from './widgets';
+export * from './hooks';
+export * from './locales';
+export * from './icons';
+export * from './context';
