@@ -34,26 +34,21 @@ const style = {
   border: '1px solid gray',
 };
 
-GlobalRegistry.registerDesignerLocales({
-  'zh-CN': {
-    sources: {
-      Inputs: '输入控件',
-      Layouts: '布局组件',
-      Arrays: '自增组件',
-      Displays: '展示组件',
-      DataContainers: '数据容器',
-    },
-  },
-  'en-US': {
-    sources: {
-      Inputs: 'Inputs',
-      Layouts: 'Layouts',
-      Arrays: 'Arrays',
-      Displays: 'Displays',
-      DataContainers: 'Data Containers',
-    },
-  },
-});
+const Add = (
+  <svg
+    viewBox="0 0 1024 1024"
+    height="1em"
+    width="1em"
+    fill="currentColor"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <svg>
+      <path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"></path>
+      <path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"></path>
+    </svg>
+  </svg>
+);
 
 export default () => {
   const [value, setValue] = useState();
@@ -61,7 +56,7 @@ export default () => {
   const [leftActiveKey, setLeftActiveKey] = React.useState();
   return (
     <div>
-      <StudioPanel actions={<ActionsWidget />}>
+      <StudioPanel>
         <TopbarPanel>
           <CompositePanel
             visible={leftVisible}
@@ -69,9 +64,17 @@ export default () => {
             activeKey={leftActiveKey}
             setActiveKey={setLeftActiveKey}
           >
-            <CompositePanel.Item title="panels.Component" icon="Add" />
-            <CompositePanel.Item title="panels.OutlinedTree" icon="Layer" />
-            <CompositePanel.Item title="panels.History" icon="History" />
+            <CompositePanel.Item title="组件" icon={Add} activeKey="1" />
+            <CompositePanel.Item
+              title="panels.OutlinedTree"
+              activeKey="2"
+              icon="Layer"
+            />
+            <CompositePanel.Item
+              title="panels.History"
+              activeKey="3"
+              icon="History"
+            />
           </CompositePanel>
         </TopbarPanel>
         <div
@@ -87,8 +90,8 @@ export default () => {
             onClose={() => setLeftVisible(false)}
           >
             <CompositePanelContent.Item
-              title="panels.Component"
-              icon="Add"
+              title="组件"
+              activeKey="1"
             ></CompositePanelContent.Item>
           </CompositePanelContent>
         </div>

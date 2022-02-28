@@ -7,11 +7,12 @@ import './styles.less';
 
 export type CompositePanelContentItemProps = {
   shape?: 'tab' | 'button' | 'link';
-  title?: React.ReactNode;
+  title?: React.ReactNode | string;
   icon?: React.ReactNode;
   href?: string;
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   extra?: React.ReactNode;
+  activeKey: string | number;
 };
 
 export type CompositePanelContentProps = {
@@ -38,7 +39,7 @@ export const CompositePanelContent: React.FC<CompositePanelContentProps> & {
 } = ({ direction, activeKey, visible, onClose, children }) => {
   const prefix = usePrefix('composite-panel-content');
   const items = parseItems(children);
-  const currentItem = activeKey !== undefined ? items?.[activeKey] : undefined;
+  const currentItem = items?.find((item) => item.activeKey === activeKey);
   const content = currentItem?.children;
 
   const renderContent = () => {
@@ -51,7 +52,7 @@ export const CompositePanelContent: React.FC<CompositePanelContentProps> & {
       >
         <div className={prefix + '-item-header'}>
           <div className={prefix + '-item-header-title'}>
-            <TextWidget>{currentItem.title}</TextWidget>
+            {currentItem.title}
           </div>
           <div className={prefix + '-item-header-actions'}>
             <div className={prefix + '-item-header-extra'}>

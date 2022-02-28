@@ -1,7 +1,6 @@
 import React from 'react';
 import cls from 'classnames';
 import { Button } from '@toy-box/toybox-ui';
-import { IconWidget, TextWidget } from '../../widgets';
 import { usePrefix } from '../../hooks';
 import './styles.less';
 
@@ -11,18 +10,19 @@ export type CompositePanelProps = {
   defaultPinning?: boolean;
   defaultActiveKey?: number;
   activeKey?: number;
-  setActiveKey?: (activeKey: number) => void;
+  setActiveKey?: (activeKey: number | string) => void;
   visible?: boolean;
   setVisible?: (isVisible: boolean) => void;
 };
 
 export type CompositePanelItemProps = {
   shape?: 'tab' | 'button' | 'link';
-  title?: string;
+  title?: string | React.ReactNode;
   icon?: React.ReactNode;
   href?: string;
   onClick?: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   extra?: React.ReactNode;
+  activeKey: string | number;
 };
 
 const parseItems = (
@@ -55,20 +55,23 @@ export const CompositePanel: React.FC<CompositePanelProps> & {
             if (item.href) {
               return <a href={item.href}>{item.icon}</a>;
             }
-            return (
-              <Button.Icon
-                tooltip={<TextWidget token={item.title} />}
-                placement="bottom"
-                icon={<IconWidget infer={item.icon} />}
-              />
-            );
+            if (item.icon) {
+              return (
+                <Button.Icon
+                  tooltip={item.title}
+                  placement="bottom"
+                  icon={item.icon}
+                />
+              );
+            }
+            return item.title;
           };
           const shape = item.shape ?? 'tab';
           const Comp = shape === 'link' ? 'a' : 'div';
           return (
             <Comp
               className={cls(prefix + '-tabs-pane', {
-                active: props.activeKey === index && props.visible,
+                active: props.activeKey === item.activeKey && props.visible,
               })}
               key={index}
               href={item.href}
@@ -79,7 +82,7 @@ export const CompositePanel: React.FC<CompositePanelProps> & {
                   } else {
                     props.setVisible(true);
                   }
-                  props.setActiveKey(index);
+                  props.setActiveKey(item.activeKey);
                 }
                 item.onClick?.(e);
               }}
