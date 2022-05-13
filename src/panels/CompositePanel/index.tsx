@@ -30,7 +30,7 @@ const parseItems = (
 ): React.PropsWithChildren<CompositePanelItemProps>[] => {
   const items: any[] = [];
   React.Children.forEach(children, (child: any) => {
-    if (child['type'] === CompositePanel.Item) {
+    if (child?.['type'] === CompositePanel.Item) {
       items.push(child['props']);
     }
   });
