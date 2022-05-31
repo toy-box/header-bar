@@ -1,6 +1,6 @@
 {
   "name": "@toy-box/header-bar",
-  "version": "1.0.7",
+  "version": "2.0.1",
   "author": "shopnb",
   "license": "MIT",
   "homepage": "@toy-box/header-bar",
@@ -36,14 +36,14 @@
     "@ant-design/icons": "^4.7.0",
     "@designable/core": "^1.0.0-beta.32",
     "@designable/shared": "^1.0.0-beta.32",
-    "@formily/react": "^2.0.0-beta.50",
-    "@formily/reactive": "^2.0.0-rc.20",
-    "@formily/reactive-react": "^2.0.0-rc.20",
-    "@toy-box/meta-schema": "^2.0.15",
-    "@toy-box/toybox-shared": "^2.0.15",
-    "@toy-box/toybox-ui": "^2.0.15",
-    "@types/react": "^16.14.20",
-    "@types/react-dom": "^16.9.14",
+    "@formily/react": "^2.1.4",
+    "@formily/reactive": "^2.1.4",
+    "@formily/reactive-react": "^2.1.4",
+    "@toy-box/meta-schema": "^3.0.3",
+    "@toy-box/toybox-shared": "^3.0.3",
+    "@toy-box/toybox-ui": "^3.0.3",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
     "ahooks": "^2.10.12",
     "classnames": "^2.3.1",
     "codemirror": "^5.61.0",
@@ -56,9 +56,9 @@
     "react-codemirror2": "^7.2.1"
   },
   "peerDependencies": {
-    "antd": "^4.16.13",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "antd": "^4.20.7",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "@designable/core": "^1.0.0-beta.32",

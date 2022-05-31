@@ -11,11 +11,9 @@ export interface IStudioPanelProps {
   theme?: string;
 }
 
-const StudioPanelInternal: React.FC<IStudioPanelProps> = ({
-  logo,
-  actions,
-  ...props
-}) => {
+const StudioPanelInternal: React.FC<
+  React.PropsWithChildren<IStudioPanelProps>
+> = ({ logo, actions, ...props }) => {
   const prefix = usePrefix('main-panel');
   if (logo || actions) {
     return (

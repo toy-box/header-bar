@@ -34,8 +34,10 @@ const parseItems = (
   return items;
 };
 
-export const CompositePanelContent: React.FC<CompositePanelContentProps> & {
-  Item?: React.FC<CompositePanelContentItemProps>;
+export const CompositePanelContent: React.FC<
+  React.PropsWithChildren<CompositePanelContentProps>
+> & {
+  Item?: React.FC<React.PropsWithChildren<CompositePanelContentItemProps>>;
 } = ({ direction, activeKey, visible, onClose, children }) => {
   const prefix = usePrefix('composite-panel-content');
   const items = parseItems(children);

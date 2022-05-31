@@ -21,8 +21,8 @@ export interface IIconWidgetProps extends React.HTMLAttributes<HTMLElement> {
   size?: number | string;
 }
 
-export const IconWidget: React.FC<IIconWidgetProps> & {
-  Provider?: React.FC<IconProviderProps>;
+export const IconWidget: React.FC<React.PropsWithChildren<IIconWidgetProps>> & {
+  Provider?: React.FC<React.PropsWithChildren<IconProviderProps>>;
 } = observer((props: React.PropsWithChildren<IIconWidgetProps>) => {
   const theme = useTheme();
   const context = useContext(IconContext);

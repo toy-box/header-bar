@@ -8,15 +8,12 @@ export type TopbarPanelProps = {
   className?: string;
 };
 
-export const TopbarPanel: React.FC<TopbarPanelProps> = ({
-  style,
-  className,
-  children,
-}) => {
-  const prefix = usePrefix('topbar-panel');
-  return (
-    <div style={style} className={cls(prefix, className)}>
-      {children}
-    </div>
-  );
-};
+export const TopbarPanel: React.FC<React.PropsWithChildren<TopbarPanelProps>> =
+  ({ style, className, children }) => {
+    const prefix = usePrefix('topbar-panel');
+    return (
+      <div style={style} className={cls(prefix, className)}>
+        {children}
+      </div>
+    );
+  };
